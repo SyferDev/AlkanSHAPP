@@ -34,7 +34,7 @@ namespace ThesisFrontend
             main = scr_main;
             Show();
 
-            if (!loggedIn) LoginScreen();
+            LoginScreen();
         }
 
         private void LoginScreen()
@@ -47,7 +47,7 @@ namespace ThesisFrontend
 
                 if (uidResponse.Status != RFIDControllerMfrc522.Status.AllOk) continue;
                 var cardUid = uidResponse.Data;
-                txt_login.Text = $"Card UID: {cardUid[0]},{cardUid[1]},{cardUid[2]},{cardUid[3]}";
+                txt_login.Text = $"Card UID: {uidResponse}";
                 loggedIn = true;
             }
         }
