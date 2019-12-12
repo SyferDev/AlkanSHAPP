@@ -32,6 +32,7 @@ namespace ThesisFrontend
 
             login = scr_login;
             main = scr_main;
+            Show();
 
             if (!loggedIn) LoginScreen();
         }
